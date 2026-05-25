@@ -70,13 +70,13 @@
 
 .hero-section {
   display: grid;
-  grid-template-columns: minmax(0, 620px) minmax(460px, 570px);
+  grid-template-columns: minmax(0, 600px) minmax(460px, 570px);
   align-items: flex-start;
   gap: clamp(2.75rem, 3.4vw, 3.5rem);
   min-height: calc(100vh - 4.25rem);
   max-width: 1240px;
   border-bottom: none;
-  padding-top: clamp(8.9rem, 11vw, 10.6rem);
+  padding-top: clamp(4.75rem, 6.5vw, 6.25rem);
   padding-bottom: 4rem;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .hero-copy {
-  padding-top: clamp(2.7rem, 3.2vw, 3.35rem);
+  padding-top: clamp(1.25rem, 1.8vw, 1.75rem);
 }
 
 .hero-kicker {
@@ -212,11 +212,15 @@ h3 {
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
-  grid-template-columns: 240px minmax(0, 1fr);
-  column-gap: 2.8rem;
+  grid-template-columns: 270px minmax(0, 1fr);
+  column-gap: 4.5rem;
   row-gap: 0.65rem;
   margin-bottom: 4.2rem;
   padding-bottom: 3.7rem;
+}
+
+.experience .date {
+  padding-left: 5rem;
 }
 
 .experience h2 {
@@ -231,8 +235,25 @@ h3 {
   margin: 0;
 }
 
-.experience .entry .chips {
-  margin: 1.8rem 0 0;
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 0.85rem;
+  grid-column: 2;
+  margin: 2.2rem 0 0;
+  padding: 0;
+}
+
+.experience-tech span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.35rem;
+  background: rgba(24, 24, 27, 0.88);
+  color: #7e22ce;
+  padding: 0.42rem 0.72rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .entry:last-child {
@@ -243,7 +264,8 @@ h3 {
 
 .entry h3,
 .entry .body-text,
-.entry .chips {
+.entry .chips,
+.entry .experience-tech {
   grid-column: 2;
 }
 
@@ -412,7 +434,8 @@ h3 {
 
   .entry h3,
   .entry .body-text,
-  .entry .chips {
+  .entry .chips,
+  .entry .experience-tech {
     grid-column: 1;
   }
 

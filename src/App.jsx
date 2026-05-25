@@ -243,8 +243,10 @@ function App() {
 
       <motion.section
         className="section experience"
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={sectionVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={replayViewport}
       >
         <h2>Experience</h2>
         <motion.div>
@@ -260,7 +262,11 @@ function App() {
             <p className="date">{item.date}</p>
             <h3>{item.role}</h3>
             <p className="body-text">{item.description}</p>
-            <p className="chips">{item.technologies}</p>
+            <div className="experience-tech" aria-label={`${item.role} skills`}>
+              {item.technologies.split(' ').map((tech) => (
+                <span key={`${item.role}-${tech}`}>{tech}</span>
+              ))}
+            </div>
           </motion.article>
           ))}
         </motion.div>
